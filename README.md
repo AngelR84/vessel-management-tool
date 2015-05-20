@@ -1,17 +1,36 @@
 # vessel-management-tool
 
+General features
+* Responsive design
+* High optimization
+* Visual interaction (Drag & Drop Elements: Sliders, markers)
+* Visual Animation
+
 #### Dashboard
 
 ![Dashboard](https://raw.githubusercontent.com/AngelR84/vessel-management-tool/master/images/dashboard.png)
+
+Features:
+* Global View
+* Clicking the markers to open edit form
 
 #### Vessel List
 
 ![Vessel List](https://raw.githubusercontent.com/AngelR84/vessel-management-tool/master/images/list.png)
 
+Features:
+* Clicking the row to open edit form 
+* Removing vessel pressing "X" button
+* Creating new Vessel pressing "New Vessel" button
+
 #### Vessel Edit Interface
 
 ![Vessel Edit](https://raw.githubusercontent.com/AngelR84/vessel-management-tool/master/images/item.png)
 
+Features:
+* Fast editting parametter with sliders
+* Dragable marker to update location
+* Removing vessel pressing "remove" button
 
 ## Technologies & Libraries 
 
