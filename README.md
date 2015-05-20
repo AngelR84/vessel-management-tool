@@ -1,12 +1,33 @@
 # vessel-management-tool
 
+### Dashboard
 
 ![Dashboard](https://raw.githubusercontent.com/AngelR84/vessel-management-tool/master/images/dashboard.png)
 
+### Vessel List
+
 ![Vessel List](https://raw.githubusercontent.com/AngelR84/vessel-management-tool/master/images/list.png)
+
+### Vessel Edit Interface
 
 ![Vessel Edit](https://raw.githubusercontent.com/AngelR84/vessel-management-tool/master/images/item.png)
 
+
+## Technologies & Libraries 
+
+Back End
+
+* Node.js
+* Express.js
+* Mongosse.js
+* bodyParser
+* MongoDB
+
+Front End
+
+* Angular JS
+* Angular Material
+* Angular Google Maps
 
 ### Mongo DB Instalation
 
