@@ -1,9 +1,9 @@
 /*
- * 	Node.js Server 
+ *	Node.js Server 
  * 
- * 	@author : Angel Rivas Casado
- * 	@email : <rivas.angel@gmail.com>
- *  @licence: GNU
+ *	@author : Angel Rivas Casado
+ *	@email : <rivas.angel@gmail.com>
+ *	@licence: GNU GENERAL PUBLIC LICENSE Version 2, June 1991
  *  
  */
 
