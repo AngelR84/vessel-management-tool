@@ -68,9 +68,9 @@ Install Mongo DB
 ```bash
 brew install mongodb
 ```
-Run the database in background
+Run the database
 ```bash
-sudo mongod &
+sudo mongod
 ```
 
 ### Server Installation
