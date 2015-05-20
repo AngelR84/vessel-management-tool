@@ -32,6 +32,7 @@ Features:
 * Fast editting parametter with sliders
 * Dragable marker to update location
 * Removing vessel pressing "remove" button
+* Doble funcionality: Creating & updating with same controller and view.
 
 ## Technologies & Libraries 
 
