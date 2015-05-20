@@ -31,7 +31,7 @@ Features:
 ![Vessel Edit](https://raw.githubusercontent.com/AngelR84/vessel-management-tool/master/images/item.png)
 
 Features:
-* Fast editting parametter with sliders
+* Fast editing parametter with sliders
 * Dragable marker to update location
 * Removing vessel pressing "remove" button
 * Doble funcionality: Creating & updating with same controller and view.
