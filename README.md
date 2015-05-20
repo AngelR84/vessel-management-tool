@@ -1,11 +1,11 @@
 # vessel-management-tool
 
 
-![Dashboard](https://cloud.githubusercontent.com/assets/210413/5077572/30dfc2f0-6e6a-11e4-9723-07c918128f4f.png)
+![Dashboard](https://raw.githubusercontent.com/AngelR84/vessel-management-tool/master/images/dashboard.png)
 
-![Vessel List](https://cloud.githubusercontent.com/assets/210413/5077572/30dfc2f0-6e6a-11e4-9723-07c918128f4f.png)
+![Vessel List](https://raw.githubusercontent.com/AngelR84/vessel-management-tool/master/images/list.png)
 
-![Vessel Edit](https://cloud.githubusercontent.com/assets/210413/5077572/30dfc2f0-6e6a-11e4-9723-07c918128f4f.png)
+![Vessel Edit](https://raw.githubusercontent.com/AngelR84/vessel-management-tool/master/images/item.png)
 
 
 ### Mongo DB Instalation
