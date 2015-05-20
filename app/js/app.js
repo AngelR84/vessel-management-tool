@@ -48,7 +48,7 @@ app.controller('AppCtrl', ['$scope', '$mdSidenav', function($scope, $mdSidenav){
  
 }]);
 
-//Map controller
+//Dashboard controller
 app.controller("DashboardCtrl", [ '$scope', '$location', 'uiGmapIsReady', 'Vessel', function($scope, $location, uiGmapIsReady, Vessel) {
 	
 	//Map Data
@@ -105,6 +105,8 @@ app.controller("DashboardCtrl", [ '$scope', '$location', 'uiGmapIsReady', 'Vesse
     console.log($scope.vessels);*/
 }]);
 
+
+//Vessel List Controller
 app.controller('VesselListCtrl',['$scope', '$location', 'Vessel', function($scope, $location, Vessel) {
 
   //API access : Request All Vessels
@@ -140,6 +142,7 @@ app.controller('VesselListCtrl',['$scope', '$location', 'Vessel', function($scop
   
 }]);
 
+//Creating & Edit Controller
 app.controller('VesselItemCtrl',['$scope','$routeParams', '$location', 'uiGmapIsReady', 'Vessel', function($scope, $routeParams, $location, uiGmapIsReady, Vessel) {
 	
 	 //Map Data
