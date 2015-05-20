@@ -29,9 +29,9 @@ Front End
 * Angular Material
 * Angular Google Maps
 
-# Instalation Process
+# Installation Process
 
-### Mongo DB Instalation
+### Mongo DB Installation
 
 Install Brew
 ```bash
