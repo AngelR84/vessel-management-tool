@@ -22,7 +22,7 @@ Features:
 
 Features:
 * Fast identification (map image)
-* Open edit forn by Clicking the rows
+* Open edit form by clicking the rows
 * Remove vessel by pressing "X" button
 * Create new Vessel by pressing "New Vessel" button
 
