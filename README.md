@@ -10,11 +10,11 @@ Update Repository
 ```bash
 brew update
 ```
-Install Mongoo DB
+Install Mongo DB
 ```bash
 brew install mongodb
 ```
-Run the database
+Run the database in background
 ```bash
 sudo mongod &
 ```
