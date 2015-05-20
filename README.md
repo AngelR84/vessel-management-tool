@@ -71,8 +71,12 @@ Run the database in background
 sudo mongod &
 ```
 
-### Run Server
+### Server Installation
 
+Install Node.js
+```bash
+  Follow the instructions at https://nodejs.org/
+```
 Run Server:
 ```bash
 node server.js
