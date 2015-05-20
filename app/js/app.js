@@ -63,9 +63,10 @@ app.controller("DashboardCtrl", [ '$scope', '$location', 'uiGmapIsReady', 'Vesse
     
     $scope.markers = [];
     
-	//Vessel List from Server
+    //API access : Request All Vessels
 	$scope.vessels = Vessel.query( function(vesselList){
 	    for(var i = 0; i< vesselList.length; i++) {
+	    		//Update Markers in Map
 		    	 $scope.markers.push({
 			      id: vesselList[i]._id,
 			      coords: {
@@ -79,6 +80,7 @@ app.controller("DashboardCtrl", [ '$scope', '$location', 'uiGmapIsReady', 'Vesse
 				    	  labelAnchor: "50 0",
 				      labelClass: "marker-labels"
 			      },
+			      //Marker Click Event -> Open Vessel Edit
 			      events:{
 				    	  click : function(marker, eventName, args){
 				    		  console.log(marker);
@@ -105,23 +107,14 @@ app.controller("DashboardCtrl", [ '$scope', '$location', 'uiGmapIsReady', 'Vesse
 
 app.controller('VesselListCtrl',['$scope', '$location', 'Vessel', function($scope, $location, Vessel) {
 
-	
+  //API access : Request All Vessels
   $scope.vessels = Vessel.query();
 
-  $scope.goToPerson = function(person, event) {
-    $mdDialog.show(
-      $mdDialog.alert()
-        .title('Navigating')
-        .content('Inspect ' + person)
-        .ariaLabel('Person inspect demo')
-        .ok('Neat!')
-        .targetEvent(event)
-    );
-  };
   //Open Vessel 
   $scope.openVessel = function(id) {
 	  $location.path('/vessel/edit/' + id);
   };    
+  
   // Remove Vessel Handler
   $scope.removeVessel = function(id) {
 	  //Send remove request to the server
@@ -145,17 +138,6 @@ app.controller('VesselListCtrl',['$scope', '$location', 'Vessel', function($scop
 	  }
   };
   
-  $scope.navigateTo = function(to, event) {
-    $mdDialog.show(
-      $mdDialog.alert()
-        .title('Navigating')
-        .content('Imagine being taken to ' + to)
-        .ariaLabel('Navigation demo')
-        .ok('Neat!')
-        .targetEvent(event)
-    );
-  };
-
 }]);
 
 app.controller('VesselItemCtrl',['$scope','$routeParams', '$location', 'uiGmapIsReady', 'Vessel', function($scope, $routeParams, $location, uiGmapIsReady, Vessel) {

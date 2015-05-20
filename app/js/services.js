@@ -1,6 +1,7 @@
 var APIurl = "/api/v1/";
 var vesselServices = angular.module('vesselServices', ['ngResource']);
 
+//RESTFUL API Access
 vesselServices.factory('Vessel', ['$resource',
   function($resource){
     return $resource(APIurl + 'vessel/:_id', {}, {
