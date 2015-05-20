@@ -1,0 +1,48 @@
+<fbtm-topbar profile="profile" path="path"></fbtm-topbar> 
+<fbtm-sidebar activeitem="activeitem"></fbtm-sidebar>    
+
+<div class="main" ng-controller="GTCampaignsVC">
+	<div class="view-container">
+		<div class="row" >  
+			<div class="col-sm-12" style="padding-left:20px;padding-right:20px;padding-bottom:40px;">
+			    <div class="pull-left">
+					<a class="btn btn-lg btn-success-transparent" href="#/campaigns/collection"><span class="glyphicon glyphicon-th"></span> Colección</a>
+		    	</div>
+				  
+		        <div class="pull-right">
+		          	<div class="btn btn-lg btn-success pull-right" ng-click="openCampaignsScheduleModal()"><span class="glyphicon glyphicon-plus"></span> Campañas</div>
+				</div>       
+				<!-- <div class="text-center">
+				 	<div>{{infoCardMap.length}}</div>
+				</div>--> 
+			</div> 
+
+             
+        <div class="col-sm-12 " style="padding-left:20px;padding-right:20px;padding-bottom:40px;">
+			
+          <div class="content-box content-box-container">
+	          <div class="table-responsive">
+	            <table class="table table-striped">
+	              <thead>
+	                <tr>
+	                  <th ng-repeat="cab in cabeceras">{{cab}}</th>
+	                </tr>
+	              </thead>
+	              <tbody>
+	                <tr ng-repeat="key in schedulecampKeyList">
+	                    <td>{{schedulecampList[key].name}}</td>
+	                    <td>{{infoCardMap[schedulecampList[key].infocardId].title}}</td>
+	                    <td><span ng-repeat="can in schedulecampList[key].antennasList">
+	                      {{AntennaList[can].name}} </span> </td>   
+	                    <td><button type="button" class="btn btn-success-transparent" ng-click="openCampaignsScheduleModal(key)">Editar</button></td>                                                    
+	                  </tr>
+	              </tbody>
+	            </table>
+       		 </div>
+        </div>
+     </div>
+    </div>
+    </div>
+</div>
+
+

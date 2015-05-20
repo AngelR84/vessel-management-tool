@@ -1,0 +1,148 @@
+
+<fbtm-topbar profile="profile" path="path"></fbtm-topbar> 
+<fbtm-sidebar activeitem="activeitem"></fbtm-sidebar>    
+
+<div class="main">
+	<div class="view-container">
+		<!--div class="row">  
+         
+   				 <div class="col-sm-3" > 
+               		<div class="content-box edit-options" ng-class="{active: basic}" ng-click="basic=true;ants=false;cal=false;stats=false;"ng-init="basic=true" >
+                 			<span class="glyphicon glyphicon-search" style="font-size:40px;padding-top:15px"></span><br>
+                 			<div style="margin-top:10px">Buscar Tarjeta</div>
+	            	</div>
+	            </div>
+	            
+	            <div class="col-sm-3"> 
+               		<div class="content-box edit-options" ng-class="{active: ants}" ng-click="basic=false;ants=true;cal=false;stats=false;" >
+                 			<span class="glyphicon glyphicon-gift" style="font-size:40px;padding-top:15px"></span><br>
+                 			<div style="margin-top:10px">Ofertas disponibles</div>
+	            	</div>
+	            </div>
+	            
+   				<div class="col-sm-3" ng-click="updateCalendar();" > 
+               		<div class="content-box edit-options" ng-class="{active: cal,disable: myswitch=='off'}" ng-click="basic=false;ants=false;cal=true;stats=false;">
+                 			<span class="glyphicon glyphicon-map-marker" style="font-size:40px;padding-top:15px"></span><br>
+                 			<div style="margin-top:10px">Clientes cercanos</div>
+               		</div>
+	            </div>
+	            
+	            <div class="col-sm-3"> 
+               		<div class="content-box edit-options" ng-class="{active: stats}" ng-click="basic=false;ants=false;cal=false;stats=true;">
+                 			<span class="glyphicon glyphicon-transfer" style="font-size:40px;padding-top:15px"></span><br>
+                 			<div style="margin-top:10px">Últimas transacciones</div>
+                 	</div>
+	            </div>
+	   	</div-->
+	
+		
+	
+	   	<div class="row">  
+	   	
+	   	
+				<div class="col-sm-6 " > 
+				<div class="content-box content-box-container">
+               			
+			             <div class="form-group">
+			                <label>Antena más cernada<span>Seleccionar la antena más próxima</span></label>
+			                <select  class="form-control" >
+     							<option>Antena 1</option>
+     							<option>Antena 2</option>
+     							<option>Antena 3</option>
+     							<option>Antena 4</option>
+						        </select>
+			             </div>
+			       </div>
+				
+				</div>	   	
+	   	
+	   	
+   				<div class="col-sm-6 " > 
+               		<div class="content-box content-box-container" style="margin-bottom:40px;">
+                 		<div class="form-group">
+			                <label>Buscar por numero de tarjeta<span>Fibity VIP Card</span></label>
+
+							<div class="input-group">
+     							 <input type="text" class="form-control">
+      							<span class="input-group-btn">
+        						<button class="btn btn-success" type="button">Buscar</button>
+      							</span>
+    						</div><!-- /input-group -->
+						</div>
+	            	</div>
+	            	
+	            	
+               	</div>	   	
+	   	
+	   	
+   				<div class="col-sm-6 " > 	
+			       
+			       <div class="content-box content-box-container">
+                 		
+        				 <button class="btn btn-success-transparent glyphicon glyphicon-repeat pull-right" type="button"> Actualizar</button>
+			             <div class="form-group">
+			                <label>Clientes cercanos</label>
+			             </div>
+			             <br>
+			             <p>Cliente 1</p>
+			             <p>Cliente 2</p>
+			             <p>Cliente 3</p>
+			             <p>Cliente 4</p>
+			             <p>Cliente 6</p>
+			             <p>Cliente 7</p>
+               		</div>	            	 
+	            	
+	            	
+	            </div>
+	            
+	            <div class="col-sm-6 " style="margin-bottom:40px;"> 
+               		<div class="content-box content-box-container ">
+               			
+               		<img style="width:200px;height:200px" class="img-circle" src="{{profile.photo}}"> 
+               		    <div class="pull-right">
+	            			<h3 class="text-right"><span style="font-size:35px;">Ángel</span><br><br>Rivas Casado<br><br>102834 Puntos</h3>
+	            			<br>
+	            		    <button class="btn btn-success-transparent glyphicon glyphicon-folder-open pull-right" type="button"> Historial</button>
+	            		</div>
+	            		
+	            		<br><br><br><br>
+                 		<div class="form-group">
+			                <label>Añadir puntos de compra<span>Importe de la compra en Euros</span></label>
+                 			<div class="input-group">
+     							 <input type="text" class="form-control">
+      							<span class="input-group-btn">
+        						<button class="btn btn-success" type="button">Añadir</button>
+      							</span>
+    						</div><!-- /input-group -->
+    					</div>
+    					
+    					<div class="form-group">
+			                <label>Canjear puntos por oferta<span></span></label>
+                 			<div class="input-group">
+     							<select  class="form-control" >
+     							<option>(Ofertas disponibles)</option>
+     							<option>Opción 1 - 3000 Puntos</option>
+     							<option>Opción 2 - 3500 Puntos</option>
+     							<option>Opción 3 - 5000 Puntos</option>
+     							<option>Opción 4 - 10000 Puntos</option>
+						        </select>
+      							<span class="input-group-btn">
+        						<button class="btn btn-success" type="button">Canjear</button>
+      							</span>
+    						</div><!-- /input-group -->
+    					</div>
+    					
+	            	</div>
+	            	
+	            	<div class="content-box content-box-container">
+               			<h3><span class="glyphicon glyphicon-ok"></span> Transacción finalizada con éxito</h3>
+               		</div>
+	            </div>
+	         
+	            
+	     </div>
+	</div>
+</div>
+
+
+

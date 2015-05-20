@@ -1,0 +1,135 @@
+<div class="infocard-midiv">
+	<!-- ############################ COMIENZO DE INFOCARD OPCION INFO  ############################-->
+	<ion-header-bar class="bar bar-header bar-positive" ng-show="actualitem.type == actualtype.info" id="{{activarFocus.title}}">
+	<div class="buttons"><button ng-show="actualview.length > 0" class="button button-clear glyphicon glyphicon-chevron-left" ng-click="goBack();"></button></div>
+	  <h1 class="title" ng-click="ocultarTitulo()">{{actualitem.title}}</h1>
+	</ion-header-bar>
+	
+	
+	<!-- ############################ COMIENZO DE INFOCARD OPCION MENU CABECERA ############################-->
+
+	<ion-header-bar align-title="right" class="bar bar-header bar-positive" ng-show="actualitem.type == actualtype.menu" id="{{activarFocus.title}}">
+	<div class="buttons"><button ng-show="actualview.length > 0" class="button button-clear glyphicon glyphicon-chevron-left" ng-click="goBack();"></button></div>
+	  <h1 class="title" ng-click="ocultarTitulo()">{{actualitem.title}}</h1>
+	       <div class="buttons" ng-show="editable == true">
+	 		    <button class="button button-clear glyphicon glyphicon-plus-sign" ng-click="addItemToActualInfocard();"></button>
+		  		<button class="button button-clear glyphicon glyphicon-minus-sign" ng-click="changeButtonDeleted();"></button>
+				<button class="button button-clear glyphicon glyphicon-move" ng-click=changeButtonMove();></button>
+	       </div>	  
+	  </ion-header-bar>
+	  
+	  <!-- ############################ IMAGEN DESPUES DE LA CABECERA INFO ############################-->
+		<div class="infocard-card-scroll" ng-show="actualitem.type=='INFO' && actualitem.type != actualtype.url && actualitem.type != actualtype.offer && actualitem.type != actualtype.product">
+			<div class="info-card" ng-click="ocultarImg()" id="{{activarFocus.img}}">
+		  		<div class="item item-image">	
+			      <img src="{{actualitem.urlImg}}">
+			    </div>
+			</div>
+			<div ng-click="ocultarDescription()" id="{{activarFocus.description}}" class="description-offer infocard-text-angular" ng-show="actualitem.type == actualtype.info" ng-bind-html="description"></div>
+	   </div>
+	   
+		
+	 <!-- ############################ COMIENZO DE INFOCARD OPCION MENU CONTENT ############################--> 
+	 <div class="infocard-card-scroll" ng-show="actualitem.type=='MENU' && actualitem.type != actualtype.url && actualitem.type != actualtype.offer && actualitem.type != actualtype.product">
+			
+			<div class="info-card-menu" ng-click="ocultarImg()" id="{{activarFocus.img}}">
+		  		<div class="item item-image">	
+			      <img src="{{actualitem.urlImg}}">
+			    </div>
+			</div>
+	   
+	  <ion-slide-box class="infocard-slider-menu" show-pager=false enableslider=false ng-show="actualitem.type == actualtype.menu">
+		    <ion-slide ng-repeat="slide in listSlide">
+				<ion-content class="infocard-scroll">	
+		  				<ion-list show-delete="data.showDelete" show-reorder="data.showReorder" ng-show="getItem(slide).type == actualtype.menu">			       
+		  					<ion-item class="infocard-cell" ng-repeat="item in getItem(slide).items"  item="item" >
+								<div ng-click='goTo($index)' class="text-left">
+									<div class="infocard-cell-icon"><img src="{{item.urlImgIcon}}" /></div>
+										<span class="title">{{item.title}}</span>
+										<span class="slogan">{{item.slogan}}</span>
+				 					<div class="buttons">
+					  					<ion-delete-button class="glyphicon glyphicon-minus-sign" ng-click="onItemDelete(item)"></ion-delete-button>
+					  					<ion-reorder-button class="glyphicon glyphicon-move" on-reorder="moveItem(item, $fromIndex, $toIndex)"></ion-reorder-button>	
+					  				</div>
+								</div>
+			  			</ion-item>
+			  		</ion-list>
+			  	</ion-content>	
+		 	</ion-slide>
+	 </ion-slide-box>
+	</div>
+	<!-- ############################ COMIENZO DE INFOCARD OPCION URL  ############################-->
+	<ion-header-bar align-title="right" class="bar-positive" ng-show="actualitem.type == actualtype.url" id="{{activarFocus.title}}">
+	<div class="buttons"><button ng-show="actualview.length > 0" class="button button-clear glyphicon glyphicon-chevron-left" ng-click="goBack();"></button></div>
+	  <h1 class="title" ng-click="ocultarTitulo()">{{actualitem.title}}</h1>
+	  </ion-header-bar>
+	  
+	<iframe ng-show="actualitem.type == actualtype.url" class="infocard-urlPage" type="text/html" width="204px"  height="328px"  ng-src="{{actualitem.urlPage}}" allowfullscreen frameborder="0"></iframe>
+
+	
+	<!-- ############################ COMIENZO DE INFOCARD OPCION OFERTA  ############################-->
+
+	<ion-header-bar align-title="center" class="bar-positive" ng-show="actualitem.type == actualtype.offer" id="{{activarFocus.title}}">
+	<div class="buttons"><button ng-show="actualview.length > 0" class="button button-clear glyphicon glyphicon-chevron-left" ng-click="goBack();"></button></div>
+	  <h1 class="title" ng-click="ocultarTitulo()">{{actualitem.title}}</h1>
+	</ion-header-bar>
+	
+	<div class="cardOffer" ng-show="actualitem.type == actualtype.offer" >
+
+	  <div class="item-image-offer" id="{{activarFocus.img}}" style="background-image:url('{{actualitem.urlImg}}');" ng-click="ocultarImg()">
+
+	  	<div class="precioAnt">
+			<span>Antes</span>
+			<p>{{actualitem.preAnt}}&euro;</p>
+		</div><div class="precioDes">
+			<span>Descuento</span>
+			<p>{{preDes}}%</p>
+		</div><div class="precioAct">
+			<span>Actual</span>
+			<p>{{actualitem.preAct}}&euro;</p>
+		</div>
+	  </div>	
+	  	<div class="description-offer infocard-text-angular" id="{{activarFocus.description}}"  ng-click="ocultarDescription()" ng-bind-html="description">
+	  	</div>
+	</div>
+	
+		<!-- ############################ COMIENZO DE INFOCARD OPCION PRODUCT  ############################-->
+
+	<ion-header-bar align-title="center" class="bar-positive" ng-show="actualitem.type == actualtype.product" id="{{activarFocus.title}}">
+	<div class="buttons"><button ng-show="actualview.length > 0" class="button button-clear glyphicon glyphicon-chevron-left" ng-click="goBack();"></button></div>
+	  <h1 class="title" ng-click="ocultarTitulo()">{{actualitem.title}}</h1>
+	</ion-header-bar>
+	
+	 
+	<div class="cardOffer" ng-show="actualitem.type == actualtype.product">
+			<div ng-show="!actualitem.listslideimg.length" ng-click="ocultarListSlide()" class="infocard-item-image-product"  style="background-image:url('http://www.guia-londres.com/imagenes/apple-store-londres.jpg');"></div>
+			<ion-slide-box ng-show="actualitem.listslideimg.length > 0" enableslider=true  show-pager="false" ng-click="ocultarListSlide()">
+			  <ion-slide ng-repeat="listImg in actualitem.listslideimg">
+			   		<div ng-show="listImg.type == 'YOUTUBE'" >
+			    		<div class="infocard-item-video-button"><a href="http://www.youtube.com/watch?v={{listImg.src}}" target="_blank"><img src="../../images/play_video.png"/></a></div>
+				 		<div class="infocard-item-video-product" style="background-image:url('http://img.youtube.com/vi/{{listImg.src}}/0.jpg');"></div>	
+			 		</div>
+			   		 <div ng-show="listImg.type == 'IMG'" class="infocard-item-image-product"  style="background-image:url('{{listImg.src}}');"></div>	
+			  </ion-slide>
+			</ion-slide-box>
+		 <div class="description-offer infocard-text-angular" id="{{activarFocus.description}}"  ng-click="ocultarDescription()" ng-bind-html="description"> 
+	 </div>
+</div>	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

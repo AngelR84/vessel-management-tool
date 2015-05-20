@@ -1,0 +1,46 @@
+<br>
+<div class="infocard-preview-drop">
+    
+    <div class='contentWrapper ng-cloak'>
+      <div class='content'>
+        <div class="row-fluid">
+           <div ng-show="txtlistinfo == true"><h1>La lista esta vacia</h1></div>
+           	<div style="width:1000px; height:50px">
+	          <ion-scroll zooming="true" direction="x" ng-show="txtlistinfo == false">
+	          	<ul class="thumbnails">
+	           		<li ng-repeat="item in listslideimg" data-drop="true" ng-model='listslideimg' jqyoui-droppable="{index: {{$index}}, onDrop:'actualizarListSlide()'}">
+		              <div class="thumbnail" data-drag="{{drag}}" data-jqyoui-options="{revert: 'invalid'}" ng-model="listslideimg" jqyoui-draggable="{index: {{$index}},animate:true}">
+		                <div class="infocard-delete" ng-show="btndelete == true" ><img src="../../images/close_button.png" ng-click="deleteImage($index)"></div>
+		                <div ng-show="item.type == 'YOUTUBE'" ng-click="prueba()" ng-click="goTo($index)" class="infocard-image-list" style="background-image:url('http://img.youtube.com/vi/{{item.src}}/0.jpg')"/>  
+		                <div ng-show="item.type == 'IMG'" class="infocard-image-list" ng-click="goTo($index)" style="background-image:url('{{item.src}}');"/>   
+		              </div>
+		            </li>
+	          	</ul>
+	          </ion-scroll>	
+	       </div>   
+        </div>
+      </div>
+    </div>
+    
+    
+  
+    
+     <div class="infocard-box-control-dragdrop">
+       	<div class="infocard-button-controls">
+       		<div class="infocard-img">
+       			 <h4>Imagen</h4>
+       			<fbtm-input-file-loader  imgmodel="imgproducts" file="fileUrlImg"></fbtm-input-file-loader>
+       		</div>
+       		<div>
+       			<h4>Url Video</h4>
+				 <div class="input-group">
+			      <span class="input-group-btn">
+			        <button class="btn btn-success glyphicon glyphicon-ok" ng-disabled="youtube.correct" ng-click="addImageUrlyoutube()" type="button"> </button>
+			      </span>
+			       <infocard-img-youtube imgmodel="youtube.urlyotube" codeyoutube="youtube.codeyoutube" fileyoutube="youtube.fileyoutube" correct="youtube.correct"></infocard-img-youtube>
+			    </div>
+			</div>    
+       	</div>
+      </div> 
+      
+</div>    	

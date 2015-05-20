@@ -1,0 +1,65 @@
+.btn , .btn:hover{
+	background-color: rgba(255, 255, 255, 0);
+	background-image: none;
+	border: 1px solid #bbb;
+	color: #bbb;
+	font-size: 13px;
+	padding: 7px 25px;
+	-moz-box-shadow: 0 0 rgba(255, 255, 255, 0);
+	-webkit-box-shadow: 0 0 rgba(255, 255, 255, 0);
+	box-shadow: 0 0 rgba(255, 255, 255, 0);
+	-moz-text-shadow: 0 0 rgba(255, 255, 255, 0);
+	-webkit-text-shadow: 0 0 rgba(255, 255, 255, 0);
+	text-shadow: 0 0 rgba(255, 255, 255, 0);
+}
+
+.btn[disabled=disabled], .btn:disabled{
+	opacity: 0.5;
+}
+
+
+.form-control-lg{
+	margin-top: 10;
+	height: 42px;
+}
+
+.btn-white, .btn-white:hover, .btn-white[disabled=disabled], .btn-white:disabled{
+	background-color: #fff;
+	background-image: none;
+	color: #1ecd6d;
+	border: 1px solid #fff;
+}
+
+.btn-white-transparent, .btn-white-transparent:hover, .btn-white-transparent[disabled=disabled], .btn-white-transparent:disabled{
+	background-color: transparent;
+	background-image: none;
+	color: #fff;
+	border: 1px solid #fff;
+}
+
+.btn-lg, .btn-lg:hover{
+	padding: 10px 25px;
+	font-size: 13px;
+}
+
+.btn-success, .btn-success:hover, .btn-success[disabled=disabled], .btn-success:disabled{
+	background-color: #1ecd6d;
+	background-image: none;
+	color: #fff;
+	border: 1px solid #1ecd6d;
+}
+
+
+
+.btn-success-transparent, .btn-success-transparent:hover{
+	
+	background-color: transparent;
+	background-image: none;
+	border: 1px solid #1ecd6d;
+	color: #1ecd6d;
+}
+
+
+
+
+

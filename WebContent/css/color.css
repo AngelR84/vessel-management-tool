@@ -1,0 +1,28 @@
+.fibitylogo { color: red; }
+
+@-webkit-keyframes fibity-rainbow {
+    0%   { color: red; } 
+    14%  { color: violet; }
+    28%  { color: blue; }
+    56%  { color: aqua; }
+    71%  { color: green; }
+    85% { color: yellow; }
+    100%   { color: red; } 
+}
+
+@-moz-keyframes fibity-rainbow {
+	0%   { color: red; } 
+	14%  { color: violet; }
+	28%  { color: blue; }
+	56%  { color: aqua; }
+	71%  { color: green; }
+	85% { color: yellow; }
+	100%   { color: red; } 
+}
+
+.fibitylogo {
+     color: red;  
+     font-size: 20vw;
+     -webkit-animation: fibity-rainbow 30s infinite  linear; 
+     -moz-animation: fibity-rainbow 30s infinite  linear; 
+}

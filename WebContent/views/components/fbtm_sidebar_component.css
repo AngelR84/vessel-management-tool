@@ -1,0 +1,760 @@
+/* @override 
+  http://fibity.com/css/dashboard.css */
+
+/*
+ * Base structure
+ */
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+html{
+  
+  min-width: 1200px;
+  
+  
+}
+body {
+  padding: 0px;
+  margin:  0px;
+  color: #333;
+  min-width: 1200px;
+}
+
+
+a {
+  color: #5bb85b;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  color: #5bb85b;
+  text-decoration: underline;
+}
+
+
+/*
+ * Global add-ons
+ */
+
+h2.green{
+  color:#47a447
+}
+
+#color
+  {
+    color:#FFF;
+    text-align:center;
+    margin-left:30px;
+  }
+
+#descripOrga
+  {
+    resize : none !important;
+  }
+
+.sub-header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.navbar-default {
+  margin-top: 0px;
+  padding-top: 0px;
+  margin-bottom: 0px;
+background-color: #ffffff;
+}
+
+.navbar-default .navbar-nav > li > a, .navbar > .container .navbar-brand {
+color: #47a447;
+}
+
+
+/*
+ * Sidebar
+ */
+
+/* Hide for mobile, show later */
+.sidebar {
+  display: block;
+}
+@media (min-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1000;
+    display: block;
+    padding: 70px 20px 20px;
+    background-color: #f5f5f5;
+    border-right: 1px solid #eee;
+  }
+}
+
+/* Sidebar navigation */
+.nav-sidebar {
+  margin-left: -20px;
+  margin-right: -21px; /* 20px padding + 1px border */
+  margin-bottom: 20px;
+}
+.nav-sidebar > li > a {
+  padding-left: 20px;
+  padding-right: 20px;
+  color: #47a447;
+}
+.nav-sidebar > .active > a {
+  color: #fff;
+  background-color: #47a447;
+}
+
+.nav-sidebar > .active > a:hover {
+  color: #fff;
+  background-color: #47a447;
+}
+
+.nav-sidevar-footer{
+  position: absolute;
+  width: 80%;
+  text-align: center;
+  color: #bbbbbb;
+  bottom: 0;
+  height: 35px;
+}
+
+/*
+ * Main content
+ */
+
+.main {
+  padding: 20px;
+  margin-left:190px;
+}
+@media (min-width: 768px) {
+  .main {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+.main .page-header {
+  margin-top: 0;
+}
+
+
+/*
+ * Placeholder dashboard ideas
+ */
+
+.placeholders {
+  margin-bottom: 30px;
+  text-align: center;
+}
+.placeholders h4 {
+  margin-bottom: 0;
+}
+.placeholder {
+  margin-bottom: 20px;
+}
+.placeholder img {
+  border-radius: 50%;
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  font-size: 16px;
+  height: auto;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.form-activate {
+  max-width: 450px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+
+.ftb-portada1 {
+  position: relative;
+  padding: 30px 15px;
+  margin-bottom: 50px;
+  ;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(0,0,0,.1);
+  color: #fff;
+  
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-image: url(http://fibity.s3-website-eu-west-1.amazonaws.com/images/mapportada.jpg);
+}
+
+.ftb-portada-business {
+  position: relative;
+  padding: 30px 15px;
+  padding-top: 30px;
+  
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(0,0,0,.1);
+  color: #fff;
+  
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-image: url(http://fibity.s3-website-eu-west-1.amazonaws.com/images/business.jpg);
+}
+
+.container{
+  
+  width: 1024px;
+  padding-left:auto;
+  padding-right:auto;
+  color: #666;
+  
+}
+
+
+.container-light{
+  
+  background-color: #5bb75b;
+  color: #ffffff;
+  
+}
+
+.fbt-business-contact {
+  position: relative;
+  padding: 30px 15px;
+  padding-top: 30px;
+  color: #ffffff;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(0,0,0,.1);
+  color: #fff;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  background-image: url(http://fibity.s3-website-eu-west-1.amazonaws.com/images/portada.jpg);
+}
+
+
+.fbt-page-login{
+  background-color: #5bb85b;
+  color: #ffffff;
+}
+
+
+.fbt-page-login a{
+  color: #fff;
+  
+  
+}
+
+/*Mobile Style*/
+@media (max-width: 768px){
+  .ftb-portada1 {
+    padding: 30px;
+  }
+  
+  .ftb-portada1 h1{
+    font-size: 30px;
+  }
+  
+  .ftb-portada-business {
+    padding: 30px;
+  }
+  
+  .ftb-portada-business img{
+    width: 130px;
+  }
+  
+  .ftb-portada1 img{
+    width: 130px;
+  }
+  
+  .ftb-portada-business h3{
+    font-size: 15px;
+  }
+  
+  .ftb-portada1 h3{
+    font-size: 15px;
+  }
+
+}
+
+/*Desktop Style*/
+@media (min-width: 768px){
+  .ftb-portada1{
+    padding: 80px 15px;
+  }
+  
+  .ftb-portada1 h1{
+    font-size: 50px;
+  }
+  
+  .ftb-portada-business {
+    padding: 80px 15px; 
+  }
+  
+  .ftb-portada-business img{
+    width: 240px;
+  }
+  
+  .ftb-portada1 img{
+    width: 240px;
+  }
+  
+  .key-input{
+    display: inline-block;
+    width: 80px;
+    text-align: center;
+  }
+
+}
+
+
+/* Motal view*/
+
+.modal-dialog {
+  padding-top: 1%;
+}
+
+.modal-header{   
+  background-color: #5bb85b;
+  color: #ffffff;
+}
+
+/* Activation key stick */
+
+.fbtm-antennas-modal-stick{
+  padding: 20px 15px 30px;
+  border: 1px solid #d0d0d0;
+  background-color: #fbfbfb;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  margin-right: 50px;
+  margin-left: 50px;
+  -moz-box-shadow: 1px 1px 1px #d6d6d6;
+  box-shadow: 1px 1px 1px #d6d6d6;
+  opacity: 1;
+}
+
+.fbtm-infocards-modal-stick{
+  padding: 20px 15px 30px;
+  border: 1px solid #d0d0d0;
+  background-color: #fbfbfb;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  margin-right: 50px;
+  margin-left: 50px;
+  -moz-box-shadow: 1px 1px 1px #d6d6d6;
+  box-shadow: 1px 1px 1px #d6d6d6;
+  opacity: 1;
+}
+
+.fbtm-organization-modal-stick{
+  padding: 30px 20px 50px;
+  border: 1px solid #d0d0d0;
+  background-color: #fbfbfb;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  margin-right: 40px;
+  margin-left: 40px;
+  -moz-box-shadow: 1px 1px 1px #d6d6d6;
+  box-shadow: 1px 1px 1px #d6d6d6;
+  opacity: 1;
+}
+
+.fbtm-infocards-modal-stick{
+  padding: 30px 20px 50px;
+  border: 1px solid #d0d0d0;
+  background-color: #fbfbfb;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  margin-right: 40px;
+  margin-left: 40px;
+  -moz-box-shadow: 1px 1px 1px #d6d6d6;
+  box-shadow: 1px 1px 1px #d6d6d6;
+  opacity: 1;
+}
+
+.fbtm-campaigns-modal-stick{
+  padding: 20px 15px 30px;
+  border: 1px solid #d0d0d0;
+  background-color: #fbfbfb;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  margin-right: 50px;
+  margin-left: 50px;
+  -moz-box-shadow: 1px 1px 1px #d6d6d6;
+  box-shadow: 1px 1px 1px #d6d6d6;
+  opacity: 1;
+}
+
+
+
+.fbtm-start-organization-app{
+  
+  width: 200px;
+  height: 353px;
+  position: relative;
+  top: 80px;
+  left: 37px;
+  background-size: cover;
+  background-image:url('../images/fibity-app-screenshot.PNG');
+}
+
+.fbtm-start-organization-background{
+  width: 190px;
+  height: 130px;
+  position: relative;
+  top: 45px;
+  left: 5px;
+  background-size: cover;
+  background-color: #020202;
+  opacity: 1;
+  text-align: center;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+
+.fbtm-start-organization-background-dark{
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  background-image: -webkit-linear-gradient(top, rgba(19, 19, 19, 0.12) 0%, rgba(0, 0, 0, 0.79) 100%);
+  background-image: -moz-linear-gradient(top, rgba(19, 19, 19, 0.12) 0%, rgba(0, 0, 0, 0.79) 100%);
+  background-image: -ms-linear-gradient(top, rgba(19, 19, 19, 0.12) 0%, rgba(0, 0, 0, 0.79) 100%);
+  background-image: linear-gradient(to bottom, rgba(19, 19, 19, 0.12) 0%, rgba(0, 0, 0, 0.79) 100%);
+  width: 190px;
+  height: 130px;
+
+}
+
+.fbtm-start-organization-background h3{
+  font-size: 16px;
+  position: relative;
+  top: -8px;
+}
+
+.fbtm-start-organization-background p{
+  font-size: 9px;
+  opacity: 1;
+  position: relative;
+  top: -10px;
+}
+
+.fbtm-start-organization-logo{
+  height: 60px;
+  
+  width: 150px;
+  position: relative;
+  top: 10px;
+  text-align: center;
+  margin-left: 4px;
+  background-repeat
+}
+
+.fbtm-start-organization-logo img{
+
+  max-height: 60px;
+  max-width: 120px;
+  margin-left:30px;
+  image-rendering: ;
+}
+
+
+
+.fbtm-start-infocard-phone{
+  
+  background-size: cover;
+  background-image: url('http://upload.wikimedia.org/wikipedia/commons/f/fa/IPhone_5.png');
+  width: 270px;
+  height: 500px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.fbtm-start-infocard-img{
+  width: 200px;
+  height: 250px;
+  position: relative;
+  top: 80px;
+  left: 37px;
+  
+  background-position: center;
+  background-size: cover;
+}
+
+.infocards_modal_header
+{
+  border-radius:20px 20px 0px 0px;  
+}
+
+.fbtm-start-infocard-info{
+  width: 200px;
+  height: 100px;
+  position: relative;
+  left: 37px;
+  background-color: #ffffff;
+  background-position: center;
+  color: #515151;
+  top: 60px;
+}
+
+.fbtm-start-infocard-info h3{
+  font-size: 16px;
+  text-align: left;
+  padding-top: 10px;
+  padding-left: 10px;
+  color: #353535;
+}
+
+.fbtm-start-infocard-info p{
+  font-size: 12px;
+  text-align: left;
+  color: #848484;
+}
+
+#descrip
+  {
+    resize:none !important;
+    height:350px;
+  }
+
+.ng-hide, 
+.ng-show {
+   display: none !important;
+}
+/********************************* css *********************************/
+
+.fbtm-start-campaigns-phone{
+  
+  background-size: cover;
+  background-image: url('http://upload.wikimedia.org/wikipedia/commons/f/fa/IPhone_5.png');
+  width: 270px;
+  height: 500px;
+  margin-left:15px;
+  margin-right:15px;
+}
+
+.campaigns-table
+  {
+    float:left;
+    width:700px;
+    text-align:center;
+  }
+  
+.imgConnecting
+  {
+    width:150px;
+    height:150px;
+  }  
+  
+.campaigns-table th
+  {
+    text-align:center;
+  }
+  
+ .campaigns-table td
+  {
+    text-align:center;
+    width:300px;
+  }
+   
+.table-campaigns
+  {
+    margin: 0 auto;
+    text-align: center;
+  }  
+   
+ .over_flow
+  {
+    text-align:center;
+    width:150px;
+    height:150px;
+    overflow:scroll;
+    margin-left:35px;
+  } 
+  
+.spaces
+  {
+    margin-top:50px;
+    margin-left:0px;
+    border:1px solid red;
+    padding-left:0px;
+  }
+
+.ImageFileReader
+  {
+    width:50px;
+    height:50px;
+    
+  }
+  
+  
+  /*
+        Flip 
+  
+  */
+  
+  
+.flip-container {
+  -webkit-perspective: 1000;
+  -moz-perspective: 1000;
+  -o-perspective: 1000;
+  perspective: 1000;
+  float:left;
+  margin-left:25px;
+  margin-top:25px;
+  border: none;
+}
+
+  .flip-container:hover .flipper,  
+  .flip-container.hover .flipper {
+    -webkit-transform: rotateY(-180deg);
+    -moz-transform: rotateY(-180deg);
+    -o-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+  }
+
+.flip-container, .front, .back {
+  width: 202px;
+  height: 356px;
+}
+
+.flipper {
+  -webkit-transition: 0.6s;
+  -webkit-transform-style: preserve-3d;
+
+  -moz-transition: 0.6s;
+  -moz-transform-style: preserve-3d;
+  
+  -o-transition: 0.6s;
+  -o-transform-style: preserve-3d;
+
+  transition: 0.6s;
+  transform-style: preserve-3d;
+
+  position: relative;
+}
+
+.front, .back {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+}
+
+.front {
+  z-index: 2;
+  background: #dff0d8;
+  text-align:center;
+  
+  -webkit-box-shadow: 0px 0px 11px 0px rgba(134, 255, 137, 0.75);
+  -moz-box-shadow:    0px 0px 11px 0px rgba(134, 255, 137, 0.75);
+  box-shadow:         0px 0px 11px 0px rgba(134, 255, 137, 0.75);
+  
+}
+
+.back {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  background: #dff0d8;
+  text-align:center;
+  
+  -webkit-box-shadow: inset 0px 0px 30px -6px rgba(0, 176, 0, 1);
+  -moz-box-shadow:    inset 0px 0px 30px -6px rgba(0, 176, 0, 1);
+  box-shadow:         inset 0px 0px 30px -6px rgba(0, 176, 0, 1);
+  
+}
+
+.back button 
+{
+  margin-left:13%;
+  padding:15px;
+  margin-top:30%;
+  text-align:center;
+  position:relative;
+}
+
+.title
+ {
+   font-size:17px;
+ }
+ 
+ 
+ .fbtm-infocard-view-img{
+  width: 200px;
+  height: 250px;
+  position: relative;
+  top: 1px;
+  left: 1px;
+  
+  background-position: center;
+  background-size: cover;
+}
+
+.fbtm-infocard-view-info{
+  width: 200px;
+  height: 100px;
+  position: relative;
+  left: 1px;
+  background-color: #ffffff;
+  background-position: center;
+  color: #515151;
+  top: -15px;
+
+}
+
+.fbtm-infocard-view-info h3{
+  font-size: 16px;
+  text-align: left;
+  padding-top: 10px;
+  padding-left: 10px;
+  color: #353535;
+}
+
+.fbtm-infocard-view-info p{
+  font-size: 12px;
+  text-align: left;
+  color: #848484;
+}
+

@@ -1,0 +1,82 @@
+<div class="modal-header">
+  <button type="button" ng-click="cancel()" class="close" aria-hidden="true">&times;</button>
+             <h4 text-center>Esta información será asociada a su antena.<br></h4></div>
+        <div class="row" style="margin-top: 15px; margin-left: 30px;"> 
+               <div class="col-sm-6 text-center">
+               
+                  <form class="form-signin text-left" role="form">
+                     <div class="form-group"> 
+                      <div class="radio-inline">
+                        <label>
+                          <input type="radio" ng-click="activar1()" name="options" value="empresa" ng-checked="chequeandoEmpr">
+                          Empresa.
+                        </label>
+                      </div>
+                      <div class="radio-inline">
+                        <label>
+                          <input type="radio" ng-click="activar2()" name="options" value="autonomo" ng-checked="chequeandoAut">
+                          Autónomo.
+                        </label>
+                      </div>
+                    </div>
+                    <div ng-show="empr">
+                      <div class="form-group">
+                          <label for="exampleInputPassword1">Razón Social y CIF</label>
+                          <input id="pass1" type="text" class="form-control" ng-model='tmpbilling.razonSocial' ng-keyup='actualizarRazonSocial()' placeholder="{{plcrs}}" >
+                          <input id="pass2" type="text"  maxlength='9'
+                           class="form-control" placeholder="{{plccif}}" maxlength='9' ng-model="tmpbilling.cif" ng-keyup="comprobarCIF()"/>                          
+                      </div>
+                    </div>
+                    <div ng-show="aut">
+                      <div class="form-group">
+                          <div class="form-group">
+                          <label for="exampleInputPassword1">Nombre y apellidos</label>
+                          <input id="pass1" type="text" class="form-control" ng-model='tmpbilling.name' ng-keyup='actualizarNombre()' placeholder="{{plcnb}}" >
+                          <input id="pass2" type="text" class="form-control" ng-model='tmpbilling.apellido' ng-keyup='actualizarApellido()' placeholder="{{plcap}}"  >
+                          </div>
+                          <label>DNI o NIF</label>
+                           <input type="text" class="form-control" placeholder="{{plcdni}}" maxlength='9' ng-model="tmpbilling.dni" ng-keyup="verificarDni()" />
+                      </div>
+                    </div>
+               
+                  </form>
+               </div>
+               
+              <div class="col-sm-6 text-center">
+              <form class="form-signin text-left" role="form">
+                
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Direccion</label>
+                    <input id="pass1" type="text" ng-model='tmpbilling.direccion1' class="form-control" ng-keyup='actualizarDireccion()'
+                     maxlength='40' placeholder="{{plcdir1}}" >
+                    <input id="pass2" type="text" ng-model='tmpbilling.direccion2' class="form-control" maxlength='40' placeholder="Dirección opcional" >
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Población y provincia</label>
+                    
+                    <input id="pass1" type="text" ng-model='tmpbilling.poblacion' class="form-control"  
+                    ng-keyup='actualizarPoblacion()' maxlength='20' placeholder="{{plcpob}}" >
+                    
+                    <input id="pass2" type="text" ng-model='tmpbilling.codigoPostal' class="form-control" ng-keyup='actualizarCodigoPostal()'
+                    maxlength='5' placeholder="Código postal" >
+                </div>
+                <div class="form-group">
+                <select class="form-control" ng-model="pro" ng-change="cambioValor(pro)" ng-options="provi for provi in prov">
+             	</select>
+                 </div>   
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Teléfono de contacto</label>
+                    <input type="text" class="form-control" ng-model='tmpbilling.telefono' ng-keyup='actualizarTelefono()'
+                    maxlength='9' placeholder="{{plctel}}"  >
+                </div>
+                <button  
+                ng-disabled='boton' class="btn btn-success btn-lg btn-primary btn-block" ng-click="ok()" type="submit">Guardar</button>
+           
+               </form>
+          </div>
+    </div> 
+    
+   
+    
+    
+    

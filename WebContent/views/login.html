@@ -1,0 +1,69 @@
+<!-- 
+<div class="fbt-page-login-background"><div class="blur"></div></div>
+
+  
+<div  ng-controller="GTLoginVC" ng-cloak >
+   <div class="row">
+ 	 <a href="http://fibity.com" class="btn btn-white-transparent">fibity.com</a>
+   
+	  <div class="col-md-4 col-md-offset-4  fbt-page-login">
+	  	  <h1 class="text-center" style="color:white;margin-top:15%;">
+			<img src="http://fibity.s3-website-eu-west-1.amazonaws.com/images/fibity_logo_alpha.png" alt="Fibity logo" width="170" height="170">
+			Manager
+			</h1>
+          <form class="form-signin">
+            <input type="text" ng-model="email" class="form-control" placeholder="Email" >
+            <input type="password" ng-model="password" class="form-control" placeholder="Password">
+            <br><br>
+            <button ng-click="doLogin();" class="btn btn-success btn-lg btn-block" type="submit">Entrar</button>
+            <br><br>
+            <div ng-show="errorMsg" class="alert"> Usuario o contrase��a incorrecta!</div>
+          </form>
+	   </div>
+	</div>
+
+	<div class="fbt-page-login-footer">
+	  <div class="container">
+	  		
+	        <p class="text-center" style="color:#fff"><a href="http://guapu.es">By <img alt="Guapu Technologies S.L." src="http://img1.missionlearn.com/images/guapulogo.png" width="60px"></a><br><br><a  href="http://guapu.es">�� 2014 Guapu Technologies</a> �� <a href="#">Pol��tica de privacidad</a> �� <a href="#">T��rminos y condiciones de uso</a></p>
+	  </div>
+	  <div class="pull-right" style="color:#555;padding-right:30px;">{{version}}</div>
+	</div>
+</div>
+ -->
+
+
+  
+<div  ng-controller="GTLoginVC" ng-cloak >
+<md-content md-theme="docs-dark" layout="column" layout-sm="column" layout-align="center center" style="color:white;font-size:1.2em">
+<div class="fbt-page-login-background"><div class="blur"></div></div>
+
+              <h1 class="text-center" style="color:white;margin-top:8%;z-index: 1000;">
+				<img src="http://fibity.s3-website-eu-west-1.amazonaws.com/images/fibity_logo_alpha.png" alt="Fibity logo" width="170" height="170">
+				Manager
+				</h1>
+				
+				<br>
+			    <md-input-container>
+			      <label>Email</label>
+			      <input ng-model="email" typw="email">
+			    </md-input-container>
+			    <md-input-container>
+			      <label>Password</label>
+			      <input ng-model="password" type="password">
+			    </md-input-container>
+			    <br>
+  				<md-button ng-click="doLogin();" class="md-raised md-primary" aria-label="Login" style="width:210px;height:45px">Login</md-button>
+
+            	<br><br>
+            	<div ng-show="errorMsg" class="md-warn" style="z-index: 1000;"> ¡Usuario o contraseña incorrecta!</div>
+            	
+
+
+	<div class="fbt-page-login-footer" style="font-size:0.7em"">
+	  		<p class="text-center" style="color:#fff"><a target="_blank" href="http://guapu.es">By <img alt="Guapu Technologies S.L." src="http://img1.missionlearn.com/images/guapulogo.png" width="60px"></a><br><br><a target="_blank"   href="http://guapu.es">© 2014 Guapu Technologies</a> · <a href="#">Política de privacidad</a> · <a href="#">Términos y condiciones de uso</a></p>
+			<div class="pull-right" style="color:#555;padding-right:30px;;z-index: 1000;">{{version}}</div>
+	</div>
+    
+</md-content>
+</div>

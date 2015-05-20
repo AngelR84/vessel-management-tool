@@ -1,0 +1,86 @@
+<fbtm-topbar profile="profile" path="path"></fbtm-topbar> 
+<fbtm-sidebar activeitem="activeitem"></fbtm-sidebar>    
+
+
+<div class="main">
+
+	<div class="view-container">
+		<div class="row">
+				<div class="col-sm-6 text-center">
+                	<div class="infocard-smartphone">
+                		<menu-infocard infocard="infocard" actualitem="actualitem" actualtype="types" description="tmpInfocard.description" editable="true" ocultar="ocultarInputFile" btnhidden="btnhidden" urlok="url"></menu-infocard>
+	              	</div>
+                </div>
+                <div class="col-sm-6 text-center">
+               	   <div class="content-box">
+                	<div class="btn-group">
+					  <button type="button" ng-click="changeTypeOfActualItem(types.info)" class="btn btn-success">Info</button>
+					  <button type="button" ng-click="changeTypeOfActualItem(types.menu)" class="btn btn-success">Menu</button>
+					  <button type="button" ng-click="changeTypeOfActualItem(types.url)" class="btn btn-success">Url</button>
+					  <button type="button" ng-click="changeTypeOfActualItem(types.offer)" class="btn btn-success">Oferta</button>
+					  <button type="button" ng-click="changeTypeOfActualItem(types.product)" class="btn btn-success">Producto</button>
+					</div> <br>
+					   <div ng-show="actualitem.type != 'URL' && actualitem.type != 'PRODUCT' && btnhidden.imgInfo == true">
+			              <h4>Imagen</h4>
+			              <fbtm-input-file-loader only="false" imgmodel="actualitem.urlImg" file="actualitem.fileImg"></fbtm-input-file-loader>
+		              </div>
+					  
+		             <div ng-show="ocultarInputFile == false && btnhidden.imgInfo == true">
+			              <h4>Selecciona Icono</h4>
+			              <fbtm-input-file-loader only="false" imgmodel="actualitem.imgIcon" file="actualitem.fileIcon"></fbtm-input-file-loader>
+			             </div>	
+			          <div ng-show="btnhidden.titulo == true">  
+			              <h4>Título</h4>
+			              <input type="text" autofocus class="form-control" ng-model="actualitem.title" placeholder="{{plctitleInfocard}}" maxlength='36' > 
+					 </div> 	
+		              <div ng-show="actualitem.type == 'INFO' && ocultarInputFile == false && btnhidden.description == true">
+			              <h4>Eslogan</h4>
+			              <input type="text" autofocus class="form-control" ng-model="actualitem.slogan" maxlength='36' > 
+			          <br>
+		              </div>	
+		              <div ng-show="actualitem.type == 'URL' && btnhidden.url == true">
+			              <div>
+			       			<h4>URL</h4>
+							 <div class="input-group">
+						      <span class="input-group-btn">
+						        <button class="btn btn-success glyphicon glyphicon-ok" ng-disabled="url.ok" ng-click="actualizarUrl(url.page);" type="button"></button>
+						      </span>
+						       <infocard-url urlmodel="url.page" ok="url.ok"></infocard-url>
+						    </div>
+						 </div>  
+		              </div>
+		              <br>
+		               
+		              
+			          <div ng-show="actualitem.type == 'OFFER' && btnhidden.precio == true">
+			              <h4>Precio Anterior</h4>
+		              	  <input type="text" autofocus class="form-control" ng-model="actualitem.preAnt" maxlength='5' > 
+		             <br>
+		              </div>
+		              <div ng-show="actualitem.type == 'OFFER' && btnhidden.precio == true">
+			              <h4>Precio Actual</h4>
+			              <input type="text" autofocus class="form-control" title="{{mnsjInfo}}" ng-model="actualitem.preAct" maxlength='5' > 
+		             <br>
+		              </div>
+		              <div>
+			              <h4>Descripci��n</h4>
+			              	<text-angular id="mytexto" ng-model="tmpInfocard.description" placeholder="{{defaultDescription}}"></text-angular>
+			           	   <br>   
+			          </div> 	   
+		              <div ng-show="actualitem.type == 'PRODUCT' && btnhidden.listSlide == true" class="infocard-product">
+		               		  <infocard-list-slide ng-show = "!actualitem.listslideimg.length" listslideimg="actualitem.listslideimg" listtext="listText = false"></infocard-list-slide>
+				              <infocard-list-slide ng-show = "actualitem.listslideimg.length > 0" listslideimg="actualitem.listslideimg" listtext="listText = true"></infocard-list-slide>
+						  </div>
+				        </div> 
+				 </div>
+	       </div>  
+	              	
+	       <div class="row buttons-box">
+	         <div class="col-sm-offset-6 col-sm-6">
+	         	<button class="btn btn-success btn-lg"  ng-disabled="boton" ng-click="cargarCambios()" type="submit">Cargar Cambios</button>
+	         	<button class="btn btn-success btn-lg"  ng-disabled="boton" ng-click="guardarCambios()" type="submit">Guardar Cambios</button>
+				<button class="btn btn-success-transparent btn-lg"  ng-show="visibility.bm1 == false" ng-disabled="boton" ng-click="" type="submit">Descartar</button>	
+			</div>
+		</div>	
+	 </div>
+</div>	

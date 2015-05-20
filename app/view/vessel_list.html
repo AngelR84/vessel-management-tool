@@ -1,0 +1,20 @@
+
+<md-button  layout-align="end" class="md-raised md-primary" ng-href="#/vessel/new" aria-label="New Vessel" >New Vessel</md-button>		  
+<md-content layout-padding>
+    <md-grid-list
+        md-cols-gt-md="12" md-cols-sm="1" md-cols-md="6"
+        md-row-height-gt-md="2:4" md-row-height="2:4"
+        md-gutter-gt-md="16px" md-gutter-gt-sm="8px" md-gutter="4px">
+
+				 <md-list-item  class="md-3-line vessel-card" ng-click="openVessel(vessel._id)" ng-repeat="vessel in vessels">
+				  <img ng-src="http://maps.googleapis.com/maps/api/staticmap?center=S%7C{{vessel.last_geo[0]}},{{vessel.last_geo[1]}}&zoom=3&size=640x640&maptype=roadmap&markers=color:red%7Clabel:{{vessel.name}}%7C{{vessel.last_geo[0]}},{{vessel.last_geo[1]}}&sensor=false')" alt="{{vessel.name}}">
+				    <div class="md-list-item-text">
+			          <h3>{{ vessel.name}}</h3>
+			          <p>Widht: {{ vessel.width }} <br> length: {{ vessel.length }} <br> Draft:  {{ vessel.draft }}</p>
+			        </div>
+						<md-button md-no-ink class="md-primary md-warn" ng-click="removeVessel(vessel._id)" aria-label="Remove" >X</md-button>
+				  <md-divider></md-divider>
+				  </md-list-item>
+				  
+ </md-grid-list>
+  </md-content>

@@ -1,0 +1,84 @@
+<div ng-controller="VesselItemCtrl">
+<md-button  layout-align="end" class="md-primary" ng-href="#/vessel/list" aria-label="back" >< Vessel List</md-button>		  
+<md-grid-list 
+			  md-cols-sm="1" md-cols-md="2" md-cols-gt-md="6"
+			  md-row-height-gt-md="1:1" md-row-height="3:1"
+			  md-gutter="12px" md-gutter-gt-sm="8px">
+
+
+		<md-grid-tile class="gray" md-rowspan="3" md-colspan="3" md-colspan-sm="1">
+			<md-content flex class="md-whiteframe-z1">
+		    	<ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" options="options" control='control'>
+				        <ui-gmap-marker coords="marker.coords" options="marker.options" events="marker.events" idkey="marker.id">
+				    </ui-gmap-marker>
+				</ui-gmap-google-map>
+		    </md-content>
+		</md-grid-tile>
+		
+		<md-grid-tile class="gray" md-rowspan="3" md-colspan="3" md-colspan-sm="1">
+			<md-content style="height: 100%;width:100% ">
+
+				  <div  layout="column" style="padding:20px;">
+					  <md-content flex>
+					    <md-input-container>
+					      <label>Name</label>
+					      <input ng-model="marker.options.labelContent">
+					    </md-input-container>
+	
+					    <div layout>
+					      <div flex="10" layout layout-align="center center">
+					        <span class="md-body-1">Width</span>
+					      </div>
+					      <md-slider flex min="10" max="500" ng-model="vessel.width" class="md-primary">
+					      </md-slider>
+					      <div flex="10" layout layout-align="center center">
+					        <input type="number" ng-model="vessel.width">
+					      </div>
+					    </div>
+					    <div layout>
+					      <div flex="10" layout layout-align="center center">
+					        <span class="md-body-1">Length</span>
+					      </div>
+					      <md-slider flex ng-model="vessel.length" min="10" max="300"  class="md-primary">
+					      </md-slider>
+					      <div flex="10" layout layout-align="center center">
+					        <input type="number" ng-model="vessel.length">
+					      </div>
+					    </div>
+					    <div layout>
+					      <div flex="10" layout layout-align="center center">
+					        <span class="md-body-1">Draft</span>
+					      </div>
+					      <md-slider flex class="md-warn" md-discrete ng-model="vessel.draft" step="1" min="1" max="30" aria-label="rating">
+					      </md-slider>
+					      
+					      </md-slider>
+					      <div flex="10" layout layout-align="center center">
+					        <input type="number" ng-model="vessel.draft">
+					      </div>
+					    </div>
+					    
+					    <div layout layout-sm="column">
+					        <md-input-container flex>
+					          <label>Latitude</label>
+					          <input ng-model="marker.coords.latitude">
+					        </md-input-container>
+					        <md-input-container flex>
+					          <label>Longitude</label>
+					          <input ng-model="marker.coords.longitude">
+					        </md-input-container>
+					     </div>
+										    
+					    <md-button ng-show="edit" layout-align="end" class="md-raised md-primary" ng-click="updateVessel()" aria-label="Update" >Update</md-button>		  
+		 				<md-button ng-show="edit" md-no-ink class="md-primary md-warn" ng-click="removeVessel()" aria-label="Remove" >Remove</md-button>
+		 				<md-button ng-show="!edit" layout-align="end" class="md-raised md-primary" ng-click="createVessel()" aria-label="Create" >Create</md-button>		  
+			
+					  </md-content>
+					</div>
+									  
+				  
+				  
+			</md-content>
+		</md-grid-tile>
+</md-grid-list>
+</div>

@@ -1,0 +1,195 @@
+<div class="modal-header campaigns" class='campaigns_modal_header'>
+  <button type="button" ng-click="cancel()" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+  <h3 class="modal-title text-center">Configuración de campaña</h3>
+</div>
+
+<div class="modal-body campaigns" >
+
+<div class="pull-right">
+<button type="button" ng-click="activarDynamic()" class="btn btn-default" data-dismiss="modal">{{btnCampaignTypeName}}</button>
+</div>
+
+<tabset>
+<tab active="tab[0].active">
+	<tab-heading>
+        <i class="glyphicon glyphicon-dashboard"></i> Configuración básica
+      </tab-heading>
+	<div class="background-blur-effect" style="top:120px;left:-10; width: 1020px; height: 550px;;background-image: url('{{urlImgOrgBackground}}');"></div>
+	<div class="background-blur-effect" style="top:110px;left: 650px;width: 410px; height: 570px; background-color:white;"></div>
+   	<div class="row">
+	     <div class="col-xs-8 col-md-8 form-group">
+	     
+	     	<!-- smartphone infocard view -->
+	         <div class="fbtm-start-infocard-phone">
+	         	<div class="fbtm-start-infocard-img"  style="background-image:url('{{urlImg}}')"></div>
+	            <div class="fbtm-start-infocard-info">
+	              	<h3>{{txtTitle}}</h3>
+	               <p>{{txtDescription}}</p>
+	            </div>
+	         </div>
+	         <!-- END smartphone infocard view -->
+	         
+	         <!-- Alert msg -->
+	         <div class="alert alert-danger" style="position:fixed;width:400px;top:200px;left:130px;" ng-show="showConfirm == true">
+		         <h3 class="text-center">Activación modo estático</h3>
+		         <p>Al activar esta opción se elimdisabledCalendarinarán las siguientes antenas por ser incompatibles:</p>
+		         		<ul>
+		         		<li>Antena 1</li>
+		         		<li>Antena 2</li>
+		         		</ul>
+		         		<br>
+		          <div class="text-center">
+		          	<button type="button" ng-click="" class="btn btn-primary" data-dismiss="modal">Cancelar operación</button>
+  					<button type="button" ng-disabled="boton" ng-click="" class="btn btn-primary btn-success">Activar modo estático</button>
+  				</div>
+	         </div>
+	         
+	        <!-- FIN Alert msg -->
+	    </div>
+		<div class="col-xs-4 col-md-4 form-group">
+
+			
+			<div ><h4>Campaña:<span style="color:green"> {{lblDynamicModeState}}</span></h4></div>
+			
+			<h4>Nombre de la Campaña</h4>
+	        <input type="text" id="name" x-ng-focus="txtfocus1" class="form-control focus" ng-model="tmpCampaign.name"
+	                 ng-keyup="actualizarName();" placeholder="Mi campaña" maxlength='40' focus="focus" >
+	                  
+			<h4>Tarjeta de Información</h4>
+	        <select class="form-control" ng-model="optionsInfocard.optInfo" ng-options="keyInfo.title for keyInfo in infoCardsKeyList">
+	        </select>
+	        
+	        
+	        <h4>Antenas Asociadas</h4>
+	        <div>
+	         	<div class="fbtm-campaigns-modal-antennas-list">
+		            <div class="" ng-repeat="Ant in AntennasKeyListSelected" >
+		            	<div class="form-control btn-info"><span class="glyphicon glyphicon-map-marker"></span> {{AntennasMap[Ant].name}} <span ng-click="deleteAnt(Ant);" class="glyphicon glyphicon-remove pull-right " style="color:rgrey;"></span></div>
+		            </div>
+	            </div>
+	        </div>
+	         <br>
+	        <div ng-show="AntennasKeyListAvailable.length > 0">
+		        <select  class="form-control" ng-model="optionsAntennas.optAnt" data-ng-options="AntennasMap[keyAnt].name for keyAnt in AntennasKeyListAvailable">
+		        </select>
+	         </div>
+	         
+			  <div class="alert alert-success" ng-show="disabledCalendar == true" role="alert">
+			  		Cuando la campaña esta en modo estático, el calendario se deshabilita 
+			  </div>
+			  <div class="alert alert-success" ng-show="infoCalendar == true" role="alert">
+			  		Comprueba que todas las casillas esten rellenadas correctamente
+			  </div>
+	     </div>
+	 </div>
+</tab>
+<tab heading="Calendario de emisión" select="renderCalender(myCalendar1);" disabled="disabledCalendar">
+	<tab-heading >
+        <i class="glyphicon glyphicon-calendar"></i> Calendario de emisión
+      </tab-heading>
+	<div class="row">
+		<!-- Calendar div -->
+		<div class="mycalendar col-sm-8 col-xs-8">
+		 	<div id="calendar" calendar="myCalendar1" ui-calendar="uiConfig.calendar" ng-model="eventSources"   ></div> 
+		</div>	
+
+		<!-- Event generation -->
+		<div class=" col-sm-3 col-xs-3 form-group">
+		
+			<form role="form">
+			
+					<!-- <div>
+						 <button type="button" class="form-control btn btn-primary btn-success" ng-click="myCalendar1.fullCalendar('render');">Refrescar</button>
+			            
+					</div> -->
+			
+				  <div class="checkbox" ng-show="phase2">
+				    <label><input type="checkbox" ng-model="datosEvents.allDay">Todo el día</label>
+				  </div>
+				   <label class="glyphicon glyphicon-calendar">Fecha Inicio</label>
+				   <div class="form-group">
+				   	   <p class="input-group">
+			              <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="datepicker.dt" is-open="datepicker.opened" min-date="datepicker.minDate" max-date="datepicker.maxDate" ng-required="true" close-text="Close" />
+			              <span class="input-group-btn">
+			                <button type="button" class="form-control btn btn-primary btn-success" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+			              </span>
+			            </p>
+				    </div>
+				   <label ng-show="showTime == true" class="glyphicon glyphicon-time">Hora Inicio</label>
+				   <div ng-show="showTime == true" class="form-group">
+				   	   <p class="input-group">
+					      <input sy-timepicker-popup="HH:mm:ss" class="form-control" ng-model="timepicker.myTime" show-meridian="false" is-open="timepicker.openedTime" />
+					      <span class="input-group-btn"><button class="form-control btn btn-primary btn-success" ng-click="openTime($event)"><i class="glyphicon glyphicon-time"></i></button></span>
+					    </p>
+				    </div>
+				   <label class="glyphicon glyphicon-calendar">Fecha Fin</label>
+				   <div class="form-group">
+				   	   <p class="input-group">
+			              <input type="text" ng-disabled="btncalen"  class="form-control" datepicker-popup="{{format}}" ng-model="datepickerend.dtend" is-open="datepickerend.openedEnd" min-date="datepickerend.minDateEnd" max-date="'2015-06-22'" ng-required="true" close-text="Close" />
+			              <span class="input-group-btn">
+			                <button type="button" ng-disabled="btncalen" class="form-control btn btn-primary btn-success" ng-click="openEnd($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+			              </span>
+			            </p>
+			       </div>
+			       <label ng-show="showTime == true"  class="glyphicon glyphicon-time">Hora Final</label>
+				   <div ng-show="showTime == true" class="form-group">
+				   	   <p class="input-group">
+					      <input sy-timepicker-popup="HH:mm:ss" class="form-control" ng-model="timepickerEnd.myTimeEnd" show-meridian="false" is-open="timepickerEnd.openedTimeEnd" />
+					      <span class="input-group-btn"><button class="form-control btn btn-primary btn-success" ng-click="openTimeEnd($event)"><i class="glyphicon glyphicon-time"></i></button></span>
+					    </p>
+				    </div>
+				  <div class="alert alert-danger" ng-show="showConflict == true" role="alert">No se puede crear el evento, porque ya se esta utilizando esa fecha. crea tu evento en otra fecha distinta que este disponible</div>  
+				    
+				  <div class="alert alert-danger" ng-show="showError == true" role="alert">No se ha añadido ningun cambio porque la hora final no puede ser igual a la hora de inicio.</div>  
+
+				 <div class="alert alert-success" ng-show="infoCalendar == true" role="alert">
+							  		Comprueba que todas las casillas esten rellenadas correctamente
+							  </div>
+				  <div align="right" style="margin-top:100%">
+				 	<button type="button" ng-show="showDelete" ng-click="deleteEvents();" class="btn btn-danger">Borrar Programación</button>
+				  </div>
+		  </form>
+		  
+		</div>  
+		
+	</div>
+</tab>
+
+<tab select="$scope.loadChart();">
+	<tab-heading>
+        <i class="glyphicon glyphicon-stats"></i> Métricas de eficiencia
+    </tab-heading>
+    <div google-chart chart="chartObject" style="width:100%;height:520px;"></div>
+    
+    
+</tab>
+</tabset>
+
+</div>
+
+
+<div class='modal-footer'>
+  
+  <button type="button" ng-click="cancel();" class="btn btn-primary btn-success" data-dismiss="modal">Cerrar</button>
+  <button type="button" ng-disabled="boton" class="btn btn-primary btn-success" ng-show="visibility.visible == true && visibility.botonLoading == false"
+	   ng-disabled="boton" ng-click="saveSchedule();">Guardar Campaña</button>
+	   
+  <button class="btn btn-primary btn-success" ng-show="visibility.visible == false && visibility.botonLoading == true"
+	   ng-disabled=true><img src="images/fbtm_wait.gif"/> Guardando... </button>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

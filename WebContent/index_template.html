@@ -1,0 +1,101 @@
+
+<html lang="es"  style="background-color: #eee;">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png"/>
+    <meta NAME="AUTHOR" CONTENT="Guapu Technologies"/>
+    <meta NAME="DESCRIPTION" CONTENT="Con Fibity pueden conseguir información en el momento y en el lugar que la necesitas. Ésta tecnología te brinda una manera única e innovadora de descubrir ofertase, información cultural, etc..."/>
+    <meta NAME="KEYWORDS" CONTENT="iBeacon,Beacon,Fibity,Guapu Technologies,Guapu,App,iOS,Android,Ifema,Xanadu,Madrid"/>
+    <meta NAME="Revisit-after" CONTENT="1 days"/>
+    <meta NAME="robots" content="ALL"/>
+    <meta name="google-site-verification" content="Nz4KbZ6_IlbeaCDQf3G6bCXb98ghe8mss2MkprcTIM8" />
+    
+    <link rel="apple-touch-icon" href="{{release}}/images/icon_ios.png"/>
+    <link rel="apple-touch-startup-image" href="{{release}}/images/splash.png" />
+	<link href="{{release}}/app/app.min.css" rel="stylesheet">
+	    
+    <title>Fibity™ Manager</title>
+    
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name ="viewport" content = "user-scalable=no, width=device-width, height=device-height">
+    
+    <script src="{{release}}/scripts/jquery.js"></script>
+    <script>jQuery.noConflict();</script>
+    <script src="{{release}}/app/config.js"></script>
+	    
+    <!--<script src='http://maps.googleapis.com/maps/api/js?sensor=false'></script> -->
+    <script src="http://maps.googleapis.com/maps/api/js?libraries=visualization,places&sensor=false&language=es&v=3.14"></script>
+    <script src="https://apis.google.com/js/client.js?onload=init"></script>
+    
+    <!--angular-leaflet-directive -->
+
+    
+    
+    
+    <script src="{{release}}/scripts/jquery-ui.js"></script>
+    <script src="{{release}}/scripts/prototype.js"></script>
+    <script src="{{release}}/scripts/uuid.js"></script>
+    <script src="{{release}}/scripts/d3.min.js" charset="utf-8"></script>
+    <script src="{{release}}/scripts/asyncFuture.umd.js"></script>
+    <!--script src="{{release}}/scripts/chart-0.2.0.js"></script-->
+    <script src="{{release}}/scripts/Chart.js"></script>
+    <script src="{{release}}/scripts/moment.min.js"></script>
+    <script src="{{release}}/scripts/fullcalendar.min.js"></script>
+    <script src='{{release}}/scripts/lodash.underscore.min.js'></script>
+    
+    <script src="{{release}}/scripts/angular.min.js"></script>
+    <script src="{{release}}/scripts/angular-route.min.js"></script>
+    <!--script src="{{release}}/scripts/angular-charts.js"></script-->
+    <!--script src="{{release}}/scripts/angular-slider.min.js"></script--> 
+    <script src='{{release}}/scripts/angular-google-maps.min.js'></script>
+    <script src="{{release}}/scripts/angular-calendar.js"></script>
+    
+    <script src="{{release}}/scripts/leaflet.js"></script>
+    <script src="{{release}}/scripts/angular-leaflet-directive.min.js"></script>
+    
+    
+    <!-- Material Design -->
+    
+    
+    <!-- Angular Material Dependencies -->
+    <!-- script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular.min.js"></script-->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular-animate.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular-aria.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angular_material/0.8.2/angular-material.min.js"></script>
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/angular_material/0.8.2/angular-material.min.css">
+    
+    <script src="{{release}}/app/app.min.js"></script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-46299286-4', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body layout="column" style="background-color: #eee;">
+  <ng-view><div class="text-center" style="padding-top:25%;width:100%;"><img src="{{release}}/images/main_loading.gif"><br><br>Loading</div></ng-view>
+
+<div id="fbtm-security">
+	<div id="fbtm-security-fade"></div>
+	<div id="fbtm-security-message">
+		<img src="{{release}}/images/security.png">
+		<div class="box">
+			<h1>Su sesión ha caducado</h1>
+			<p>Desde Fibity nos tomamos muy en serio la seguridad de nuestros usuarios. Su sesión ha sido revocada por cuestiones de seguridad. Este suceso ha podido producirse por alguno de los siguientes motivos:</p>
+			<ul>
+				<li>Ha iniciado sesión en otro navegador y/o dispositivo</li>
+				<li>Recientemente su navegador ha sido actualizado</li>
+			</ul>
+			<p>A continuación puede volver a iniciar sesión normálmente. Esta acción cerrara todas las sesiones iniciadas en otros dispositivos.
+		</div>
+		<div class="buttons"><button class="btn btn-lg btn-success " onclick="location.reload();">Iniciar sesión</button></div>
+	</div>
+</div></body></html>
+
