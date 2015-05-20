@@ -19,7 +19,7 @@ Features:
 ![Vessel List](https://raw.githubusercontent.com/AngelR84/vessel-management-tool/master/images/list.png)
 
 Features:
-* Fast identfication with map image
+* Fast identification with map image
 * Clicking the row to open edit form 
 * Removing vessel pressing "X" button
 * Creating new Vessel pressing "New Vessel" button
