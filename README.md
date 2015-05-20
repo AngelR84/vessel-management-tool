@@ -1,6 +1,6 @@
 # vessel-management-tool
 
-General features
+General features:
 * Responsive design
 * High optimization
 * High Usability
@@ -14,7 +14,7 @@ General features
 
 Features:
 * Global View
-* Clicking the markers to open edit form
+* Open edit form by Clicking the markers
 
 #### Vessel List
 
@@ -22,9 +22,9 @@ Features:
 
 Features:
 * Fast identification (map image)
-* Clicking the row to open edit form 
-* Removing vessel pressing "X" button
-* Creating new Vessel pressing "New Vessel" button
+* Open edit forn by Clicking the rows
+* Remove vessel by pressing "X" button
+* Create new Vessel by pressing "New Vessel" button
 
 #### Vessel Edit Interface
 
@@ -32,8 +32,8 @@ Features:
 
 Features:
 * Fast editing parameter with sliders
-* Dragable marker to update location
-* Removing vessel pressing "remove" button
+* Update location by Draging marker
+* Remove vessel by pressing "remove" button
 * Doble funcionality: Creating & updating with same controller and view.
 
 ## Technologies & Libraries 
