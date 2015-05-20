@@ -19,7 +19,7 @@ Features:
 ![Vessel List](https://raw.githubusercontent.com/AngelR84/vessel-management-tool/master/images/list.png)
 
 Features:
-* Fast identification with map image
+* Fast identification (map image)
 * Clicking the row to open edit form 
 * Removing vessel pressing "X" button
 * Creating new Vessel pressing "New Vessel" button
@@ -36,7 +36,7 @@ Features:
 
 ## Technologies & Libraries 
 
-Back End
+BackEnd
 
 * Node.js
 * Express.js
@@ -44,7 +44,7 @@ Back End
 * bodyParser
 * MongoDB
 
-Front End
+FrontEnd
 
 * Angular JS
 * Angular Material
