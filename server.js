@@ -52,24 +52,6 @@ var jsonParser = bodyParser.json();
 	
 /***** REST Methods Definition *****/
 
-//Get all Vessels
-app.get("/api/v1/create", function(req,res){
-
-	var v1 = new Vessel({ 
-		name: 'Name',
-		width: 10,
-		length: 10,
-		draft: 10,
-		last_geo: [10,10]
-	});
-
-	v1.save(function (err) {
-		if (err) console.error.bind(console, 'DB save error');
-	    console.log('saved');
-	    res.send(200);
-	});
-});
-
 
 // Get all Vessels
 app.get("/api/v1/vessel", jsonParser, function(req,res){
