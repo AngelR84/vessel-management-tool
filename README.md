@@ -3,6 +3,7 @@
 General features
 * Responsive design
 * High optimization
+* High Usability
 * Google Maps Integration
 * Visual interaction (Drag & Drop Elements: Sliders, markers)
 * Visual Animation
